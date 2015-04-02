@@ -7,7 +7,7 @@ import (
 	"os"
 	"time"
 
-	"github.com/boltdb/bolt"
+	"github.com/btcsuite/bolt"
 	"github.com/codegangsta/cli"
 )
 

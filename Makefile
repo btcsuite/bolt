@@ -26,7 +26,7 @@ cpuprofile: fmt
 # go get github.com/kisielk/errcheck
 errcheck:
 	@echo "=== errcheck ==="
-	@errcheck github.com/boltdb/bolt
+	@errcheck github.com/btcsuite/bolt
 
 fmt:
 	@go fmt ./...

@@ -10,7 +10,7 @@ import (
 	"net/http/httptest"
 	"os"
 
-	"github.com/boltdb/bolt"
+	"github.com/btcsuite/bolt"
 )
 
 // Set this to see how the counts are actually updated.

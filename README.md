@@ -30,7 +30,7 @@ services every day.
 To start using Bolt, install Go and run `go get`:
 
 ```sh
-$ go get github.com/boltdb/bolt/...
+$ go get github.com/btcsuite/bolt/...
 ```
 
 This will retrieve the library and install the `bolt` command line utility into

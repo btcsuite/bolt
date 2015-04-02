@@ -3,8 +3,8 @@ package main_test
 import (
 	"testing"
 
-	"github.com/boltdb/bolt"
-	. "github.com/boltdb/bolt/cmd/bolt"
+	"github.com/btcsuite/bolt"
+	. "github.com/btcsuite/bolt/cmd/bolt"
 )
 
 // Ensure that a list of buckets can be retrieved.
