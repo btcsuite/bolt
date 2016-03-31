@@ -344,7 +344,7 @@ func (cmd *DumpCommand) Run(args ...string) error {
 	for i, pageID := range pageIDs {
 		// Print a separator.
 		if i > 0 {
-			fmt.Fprintln(cmd.Stdout, "===============================================\n")
+			fmt.Fprintln(cmd.Stdout, "===============================================")
 		}
 
 		// Print page to stdout.
@@ -465,7 +465,7 @@ func (cmd *PageCommand) Run(args ...string) error {
 	for i, pageID := range pageIDs {
 		// Print a separator.
 		if i > 0 {
-			fmt.Fprintln(cmd.Stdout, "===============================================\n")
+			fmt.Fprintln(cmd.Stdout, "===============================================")
 		}
 
 		// Retrieve page info and page size.
@@ -825,7 +825,10 @@ func (cmd *StatsCommand) Run(args ...string) error {
 
 		fmt.Fprintln(cmd.Stdout, "Bucket statistics")
 		fmt.Fprintf(cmd.Stdout, "\tTotal number of buckets: %d\n", s.BucketN)
-		percentage = int(float32(s.InlineBucketN) * 100.0 / float32(s.BucketN))
+		percentage = 0
+		if s.BucketN != 0 {
+			percentage = int(float32(s.InlineBucketN) * 100.0 / float32(s.BucketN))
+		}
 		fmt.Fprintf(cmd.Stdout, "\tTotal number on inlined buckets: %d (%d%%)\n", s.InlineBucketN, percentage)
 		percentage = 0
 		if s.LeafInuse != 0 {
@@ -917,7 +920,7 @@ func (cmd *BenchCommand) Run(args ...string) error {
 	// Write to the database.
 	var results BenchResults
 	if err := cmd.runWrites(db, options, &results); err != nil {
-		return fmt.Errorf("write: ", err)
+		return fmt.Errorf("write: %v", err)
 	}
 
 	// Read from the database.
