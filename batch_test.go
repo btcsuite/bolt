@@ -4,7 +4,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/boltdb/bolt"
+	"github.com/btcsuite/bolt"
 )
 
 // Ensure two functions can perform updates in a single batch.
